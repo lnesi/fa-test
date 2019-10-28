@@ -7,9 +7,9 @@ const readline = require('readline');
 
 
 const InputValidators = {
-  arena: /^\d*\s\d/g,
+  arena: /^\d*\s\d*/g,
   robotInitialPosition: /^\d*\s\d\s[NWES]/g,
-  robotInstructions: /^[MLR]|([MLR]+[MLR])/g
+  robotInstructions: /^[MLR]$|(^[MLR]+[MLR])/g
 }
 
 const InputQuestions = {
@@ -26,10 +26,12 @@ const rl = readline.createInterface({
 
 function getInput(question: string, validator: RegExp, delimeter: string, callback: (answer: string[]) => void) {
   rl.question(question, (answer) => {
+    answer = answer.trim();
     if (answer.match(validator) && answer.match(validator)[0].length == answer.length) {
+      console.log(answer.match(validator));
       callback(answer.split(delimeter));
     } else {
-      console.log("Invalid Input");
+      console.log("Invalid Input!");
       getInput(question, validator, delimeter, callback);
     }
   })
@@ -47,13 +49,19 @@ function createRobot(callback: (robot: Robot) => void) {
 
 getInput(InputQuestions.arena, InputValidators.arena, " ", (arenaSize: string[]) => {
   const arena = new Arena(Number(arenaSize[0]), Number(arenaSize[1]));
-  console.log("Robot A: ")
   createRobot((robotA: Robot) => {
-    console.log("Robot B: ")
     createRobot((robotB: Robot) => {
+      robotA.setArena(arena);
+      robotB.setArena(arena);
       robotA.move();
       robotB.move();
-      rl.clode;
+      console.log("** Results **");
+      console.log("Robot A");
+      robotA.printResults();
+      console.log("Robot B");
+      robotB.printResults();
+      rl.close;
+      process.exit();
     });
   });
 });

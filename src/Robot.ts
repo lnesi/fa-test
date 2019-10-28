@@ -25,8 +25,16 @@ export class Robot {
     this.instructions = instructions;
   }
 
+  public getInstructions(): string[] {
+    return this.instructions;
+  }
+
   public setArena(arena: Arena): void {
     this.arena = arena;
+  }
+
+  public getArena(): Arena {
+    return this.arena;
   }
 
   public move(): void {

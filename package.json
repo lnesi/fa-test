@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "ts-node src/index.ts",
     "build": "tsc src/index.ts --outDir build",
     "start": "node build/index.js"
@@ -17,9 +17,18 @@
     "@types/lodash": "^4.14.144",
     "@types/node": "^12.11.7",
     "jest": "^24.9.0",
-    "ts-jest": "^24.1.0"
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
   },
   "dependencies": {
     "lodash": "^4.17.15"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    }
   }
 }

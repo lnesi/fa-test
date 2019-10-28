@@ -17,8 +17,14 @@ var Robot = /** @class */ (function () {
     Robot.prototype.setInstructions = function (instructions) {
         this.instructions = instructions;
     };
+    Robot.prototype.getInstructions = function () {
+        return this.instructions;
+    };
     Robot.prototype.setArena = function (arena) {
         this.arena = arena;
+    };
+    Robot.prototype.getArena = function () {
+        return this.arena;
     };
     Robot.prototype.move = function () {
         this.instructions.forEach(this.calculateInstructionStep.bind(this));

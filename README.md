@@ -14,9 +14,18 @@ FA Test
 
 `npm run build`
 
-## test
+## Test
 
 `npm run test`
+
+```
+ PASS  src/__tests__/Robot.test.ts
+  Robot Unit Tests
+    ✓ constructor (3ms)
+    ✓ setInstructions (1ms)
+    ✓ setArena
+    ✓ move (1ms)
+```
 
 ## Notes
 

@@ -16,6 +16,6 @@ FA Test
 
 ## Notes
 
-#### What I will do better:
+#### What I will do better?:
 
-Change callbacks in TS to promises. Something I found initially challenging due to is lack of docs at the official site and moved on on the spirit of delivery.
+Change callbacks in TS to promises. Something I found initially challenging to make it work with node readline module due to is lack of docs at the official site. I decided to move on for the progress of delivery.

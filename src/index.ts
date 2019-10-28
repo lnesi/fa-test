@@ -8,8 +8,8 @@ const readline = require('readline');
 
 const InputValidators = {
   arena: /^\d*\s\d/g,
-  robotInitialPosition: /^\d*\s\d\s[N,W,E,S]/g,
-  robotInstructions: /^[M,L,R]+[M,L,R]/g
+  robotInitialPosition: /^\d*\s\d\s[NWES]/g,
+  robotInstructions: /^[MLR]|([MLR]+[MLR])/g
 }
 
 const InputQuestions = {
@@ -51,7 +51,9 @@ getInput(InputQuestions.arena, InputValidators.arena, " ", (arenaSize: string[])
   createRobot((robotA: Robot) => {
     console.log("Robot B: ")
     createRobot((robotB: Robot) => {
-      rl.close();
+      robotA.move();
+      robotB.move();
+      rl.clode;
     });
   });
 });

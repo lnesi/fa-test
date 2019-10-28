@@ -1,4 +1,6 @@
 import { RobotPosition } from './Interfaces';
+import { Arena } from './Arena';
+
 export class Robot {
 
   private position: RobotPosition;
@@ -15,4 +17,11 @@ export class Robot {
     this.instructions = instructions;
   }
 
+  public move(arena: Arena): void {
+
+  }
+
+  private calculateInstructionStep(step: string) {
+
+  }
 }

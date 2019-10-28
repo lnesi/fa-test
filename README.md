@@ -14,6 +14,10 @@ FA Test
 
 `npm run build`
 
+## test
+
+`npm run test`
+
 ## Notes
 
 #### What I will do better?:
